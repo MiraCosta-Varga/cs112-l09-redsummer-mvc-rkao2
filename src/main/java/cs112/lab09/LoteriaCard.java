@@ -89,7 +89,7 @@ public class LoteriaCard
     public Image getImage() {
         FileInputStream input = null;
         try {
-            input = new FileInputStream("../src/main/resources" + this.imageName);
+            input = new FileInputStream("./src/main/resources/images/" + this.imageName);
         } catch (FileNotFoundException e) {
             //e.printStackTrace();
             System.err.println("ERROR: could not open the Loteria image file.");
