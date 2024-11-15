@@ -4,6 +4,7 @@ module cs112.lab09 {
 
 
     opens cs112.lab09 to javafx.fxml;
+
     exports cs112.lab09;
     exports cs112.lab09.models;
     opens cs112.lab09.models to javafx.fxml;
