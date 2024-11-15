@@ -8,12 +8,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-//import javafx.scene.image.logo;
 
 import java.util.Random;
 
@@ -65,10 +65,9 @@ public class MainApplication extends Application /* implements EventHandler<Acti
 
         //SETUP COMPONENTS
         Label titleLabel = new Label("Welcome to EChALE STEM Loteria!");
-        ImageView cardImageView = new ImageView( cardLogo.getImage());
+        ImageView cardImageView = new ImageView();
         Label messageLabel = new Label("Click the button to randomly draw a card.");
         Button drawCardButton = new Button("Draw Random Card");
-        //gameProgressBar = new ProgressBar();
 
         //CUSTOMIZE COMPONENT
         messageLabel.setWrapText(true);
@@ -85,7 +84,7 @@ public class MainApplication extends Application /* implements EventHandler<Acti
                         if(count == shuffleCards.length){
                             //end the game
                             messageLabel.setText("GAME OVER! No more cards! Exit and run program to reset ^_^ ");
-                            //cardImageView.setImage( cardLogo.getImage());
+                            cardImageView.setImage(new Image("file:src/main/resources/0.png"));
                             drawCardButton.setDisable(true);
                         } else{
                             // get random card
@@ -107,9 +106,7 @@ public class MainApplication extends Application /* implements EventHandler<Acti
 
         //ADD COMPONENTS
         VBox vbox = new VBox();
-        vbox.getChildren().addAll(titleLabel,
-                //cardImageView,
-                messageLabel, drawCardButton);
+        vbox.getChildren().addAll(titleLabel, cardImageView, messageLabel, drawCardButton);
         vbox.setAlignment(Pos.CENTER);
         vbox.setSpacing(10.0);
 
